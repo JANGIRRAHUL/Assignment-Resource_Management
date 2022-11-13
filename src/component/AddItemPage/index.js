@@ -32,7 +32,7 @@ class AddItem extends Component {
         resource:"",
         descriptionError: false,
         description:"",
-        status:403
+        status:200
     }
 
     onChangeItemName = (event) => {
