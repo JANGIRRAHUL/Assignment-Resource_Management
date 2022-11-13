@@ -9,6 +9,7 @@ margin: 0;
 padding: 0;
 `
 export const HomePageContainer = styled.div`
+// position: relative;
 background-color: #ffffff;
 backgroung-size: cover;
 padding: 0px;
@@ -27,6 +28,7 @@ width: 100vw;
 top: 0;
 padding: 0px;
 margin: 0px;
+z-index: 2;
 `
 export const MobileFooter = styled.div`
 @media (max-width: 440px){
@@ -120,8 +122,11 @@ margin-right: 30px;
     background-color: transparent;
 }
 `
+export const ParantTagContainer = styled.div`
+
+`
 export const TagContainer = styled.ul`
-margin-top: 70px;
+margin-top: 100px;
 padding: 0px;
 display: flex;
 justify-content: center;
@@ -162,7 +167,14 @@ border-top-right-radius: ${props => props.right ? "5px":null};
 `
 export const InputContainer = styled.div`
 display: flex;
+justify-content: center;
+padding: 0px;
+margin: 0px;
 position: relative;
+@media (max-width: 920px){
+    justify-content: center;
+    align-items: center;
+}
 @media (max-width: 440px){
     justify-content: center;
     align-items: center;
@@ -176,11 +188,12 @@ export const SearchInput = styled.input`
 width: 648px;
 height: 40px;
 margin-top: 20px;
-margin-left: 149px;
+// margin-left: 125px;
 border-radius: 3px;
 border: 1px solid #D7DFE9;
 @media (max-width: 920px){
     width: 448px;
+    margin-left: 0px;
 }
 @media (max-width: 440px){
     width: 270px;
@@ -196,7 +209,7 @@ display: flex;
 justify-content: center;
 flex-wrap: wrap;
 position: relative;
-width: 90vw;
+width: 100vw;
 padding: 0px;
 @media (max-width: 920px){
     width: 100vw;
@@ -212,8 +225,8 @@ background: #FFFFFF;
 border: 1px solid #D7DFE9;
 border-radius: 4px;
 margin-right: 20px;
-width: 360px;
-height: 192px;
+width: 390px;
+height: 175px;
 padding-top: 24px;
 padding-left: 24px;
 margin-top: 30px;

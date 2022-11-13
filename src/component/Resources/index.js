@@ -1,7 +1,7 @@
 import { Component } from "react";
 import {ThreeDots} from "react-loader-spinner"
 
-import {HomePageContainer, TagButton, TagList, TagContainer, SearchInput, InputContainer, LoaderContainer} from "../../styledcomponent"
+import {HomePageContainer, TagButton, TagList, TagContainer, SearchInput, InputContainer, LoaderContainer, ParantTagContainer} from "../../styledcomponent"
 import PaginatedItems from "../Pagination";
 import "./index.css"
 
@@ -96,24 +96,29 @@ class Resources extends Component{
     render(){
         const {selected1, selected2, selected3} = this.state
         return(
+            <>
+            {/* <Header/> */}
              <HomePageContainer>
-            <TagContainer>
-                <TagList>
-                    <TagButton className="button" type="button" left={true} selected = {selected1} onClick={this.onClickResources} value="">Resources</TagButton>
-                </TagList>
-                <TagList>
-                    <TagButton className="button" type="button" selected = {selected2} onClick={this.onClickRequests} value="request">Requests</TagButton>
-                </TagList>
-                <TagList>
-                    <TagButton className="button" type="button" right={true} selected = {selected3} onClick={this.onClickUsers} value="user">Users</TagButton>
-                </TagList>
-            </TagContainer>
+                
+                <ParantTagContainer>
+                    <TagContainer>
+                        <TagList>
+                            <TagButton className="button" type="button" left={true} selected = {selected1} onClick={this.onClickResources} value="">Resources</TagButton>
+                        </TagList>
+                        <TagList>
+                            <TagButton className="button" type="button" selected = {selected2} onClick={this.onClickRequests} value="request">Requests</TagButton>
+                        </TagList>
+                        <TagList>
+                            <TagButton className="button" type="button" right={true} selected = {selected3} onClick={this.onClickUsers} value="user">Users</TagButton>
+                        </TagList>
+                    </TagContainer>
+            </ParantTagContainer>
             <InputContainer>
                 <SearchInput type="search" placeholder="Search" onChange={this.onChangeSearchInput}/>
             </InputContainer>
             {this.renderPagination()}
         </HomePageContainer>
-            
+        </>
         )
     }
 }
